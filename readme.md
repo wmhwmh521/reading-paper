@@ -1,4 +1,4 @@
 # 论文笔记
 ***
 
-- [MIT](https://github.com/wmhwmh521/reading-paper/blob/main/DETR)
+- [DETR](https://github.com/wmhwmh521/reading-paper/blob/main/DETR)
