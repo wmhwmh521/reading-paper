@@ -26,6 +26,7 @@ CNN提feature然后transformer过一遍，再做预测分类和边界框回归�
 -object queries
 
 decoder的input一部分是object queries，文中说它是可以学习的位置编码，额外加入到encoder output上作为整体的decoder input
+
 PS.有些忘了transformer decoder的输入应该是什么，记得输入就是普通sequence
 
 ![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/2.png)
