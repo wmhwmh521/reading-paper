@@ -25,7 +25,7 @@ CNN提feature然后transformer过一遍，再做预测分类和边界框回归�
 
 -object queries
 
-decoder的input一部分是object queries，文中说它是可以学习的位置编码，额外加入到encoder output上作为整体的decoder input
+decoder的input一部分是object queries，文中说它是可以学习的位置编码，额外加入到encoder output上作为整体的decoder input，有一些解释说这个位置编码可以更倾向于图像的不同位置，这样可以生成对应不同位置的边界框
 
 PS.有些忘了transformer decoder的输入应该是什么，记得输入就是普通sequence
 
