@@ -1,36 +1,23 @@
 ## FPN
 ***
 
-- [原论文](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/2End-to-End%20Object%20Detection%20with%20Transformers.pdf)
+- [原论文](https://github.com/wmhwmh521/reading-paper/blob/main/paper/FPN/4FPN.pdf)
 
 
-看了下论文的整体模型和思路，基本上就是CNN的backbone + transformer预测分类和边界框的回归，其中有一些细节，同时了解了一些概念
+一篇检测领域较经典的论文，使用了金字塔结构，基于Faster R-CNN做的改进
 
--Set Prediction
+-Feature Pyramid
 
-不同于RCNN和YOLO生成框以后用NMS去重的方式，这里使用的Set Prediction是为生成的框与真实的框做匹配，举例来说就是预测有N个框，真实图片有3个框，那么就将真实图片里的框补齐到N个，即为
-3 + （N - 3）,之后再将预测的N个框和真实的N个框（包含N-3个no object标签）做两两匹配，以解决样本和标签的问题，具体匹配规则是匈牙利算法（查了一下是一种集合匹配的方式）
+文中将其称为特征金字塔，实际做法就是两层特征一融合，举例来说，原文中C2C3C4C5卷积模块输出分别为R2R3R4R5,那么C2的最终输出P2就应该是R2 + R3做上采样（普通的双线性插值）2倍以后的加和，再利用得到的P2P3P4P5分别输入到RPN模块和fast RCNN模块里做正常的的计算，同时RPN和fast RCNN后续的模块对于不同融合的特征图都共享权重
 
--整体框架
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/FPN/1.png)
 
-CNN提feature然后transformer过一遍，再做预测分类和边界框回归，CNN和transformer都是标准的框架，可以使用resnet-50和pytorch官方实现的transformer
+-多尺度
 
-不同之处在于预测框和真实框的匹配规则，图中红黄框有相应匹配，绿色则是no object
+因为这里的特征金字塔是多尺度的，所以文中并没有对每个尺度的特征图都做所有大小锚框的预测，而是根据越是浅层的特征图，保留的像素信息越多这一情况，对浅层的特征图做小目标预测，对深层的特征图做大目标预测（仔细想想蛮有道理的，有时候图片很糊的话只能看清个大概的轮廓，类似于大目标）
 
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/1.png)
+-一些细节
 
--一些实现细节
+这里提取到特征图然后做锚框的预测还有个问题就是，在融合后的特征图预测到的框应该是对应原图的特征图的哪一级，文中给出了一个公式，我感觉蛮奇怪的，有点不太理解公式为什么这样写，暂时的理解就是，P2对应C2这种，另外的是P5P6对应C5，P6单纯的是想增加一个更大的锚框，等之后看完了faster RCNN的源码再来想想这个问题吧
 
-首先是CNN卷积后的feature map形状是d×H×W（d为channel），会变为 d×HW以符合sequence的特征，然后加上fixed的位置编码输入到encoder中
-
--object queries
-
-decoder的input一部分是object queries，文中说它是可以学习的位置编码，额外加入到encoder output上作为整体的decoder input，有一些解释说这个位置编码可以更倾向于图像的不同位置，这样可以生成对应不同位置的边界框
-
-PS.有些忘了transformer decoder的输入应该是什么，记得输入就是普通sequence
-
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/2.png)
-
--loss
-
-loss部分相比于RCNN和YOLO，除了分类损失+回归损失，还多了一项GIoU loss，看别的论文也有蛮多加入了这一项损失的，也许有必要看看GIoU loss这篇文章
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/FPN/2.png)
