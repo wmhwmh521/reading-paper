@@ -1,36 +1,27 @@
-## DETR
+## VIT
 ***
 
-- [原论文](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/2End-to-End%20Object%20Detection%20with%20Transformers.pdf)
+- [原论文](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/5VIT.pdf)
 
 
-看了下论文的整体模型和思路，基本上就是CNN的backbone + transformer预测分类和边界框的回归，其中有一些细节，同时了解了一些概念
-
--Set Prediction
-
-不同于RCNN和YOLO生成框以后用NMS去重的方式，这里使用的Set Prediction是为生成的框与真实的框做匹配，举例来说就是预测有N个框，真实图片有3个框，那么就将真实图片里的框补齐到N个，即为
-3 + （N - 3）,之后再将预测的N个框和真实的N个框（包含N-3个no object标签）做两两匹配，以解决样本和标签的问题，具体匹配规则是匈牙利算法（查了一下是一种集合匹配的方式）
+transformer架构的视觉分类器
 
 -整体框架
 
-CNN提feature然后transformer过一遍，再做预测分类和边界框回归，CNN和transformer都是标准的框架，可以使用resnet-50和pytorch官方实现的transformer
+整体的思路比较简单，就是将图片先经过分割，然后展平（flattened），经过embedding后作为transformer的输入，不过只用transformer的encoder部分
 
-不同之处在于预测框和真实框的匹配规则，图中红黄框有相应匹配，绿色则是no object
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/1.png)
 
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/1.png)
+-输入
 
--一些实现细节
+文中图片举例的输入是将input分割成3 * 3，即为9份，然后再将每一份都展平成一个sequence，经过一个embedding以后变为D维的向量，这个embedding文中给的解释就是一个简单的矩阵乘，之后会加入position encoding，与普通transformer类似，之后输入transformer结构中
 
-首先是CNN卷积后的feature map形状是d×H×W（d为channel），会变为 d×HW以符合sequence的特征，然后加上fixed的位置编码输入到encoder中
+-transformer encoder
 
--object queries
+就是参考的标准的transformer结构，有些不同的是layer Norm的位置不同，标准transformer是经过多头注意力和残差相加之后做layer Norm，而这里是先做layer Norm再经过MSA（multihead self attention），只有这一个不同点，不过不太了解为什么这样改
 
-decoder的input一部分是object queries，文中说它是可以学习的位置编码，额外加入到encoder output上作为整体的decoder input，有一些解释说这个位置编码可以更倾向于图像的不同位置，这样可以生成对应不同位置的边界框
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/2.png)
 
-PS.有些忘了transformer decoder的输入应该是什么，记得输入就是普通sequence
+-class token
 
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/2.png)
-
--loss
-
-loss部分相比于RCNN和YOLO，除了分类损失+回归损失，还多了一项GIoU loss，看别的论文也有蛮多加入了这一项损失的，也许有必要看看GIoU loss这篇文章
+同时文章参考了bert的多下游任务的策略，即加入了class词元，在bert中这一词元代表的整个句子级别的语义信息，而这里代表的是整个图片的语义信息，经过transformer结构提取信息后，最终的预测也是在class次元的feature上进行预测，即经过一个2层的MLP（激活函数是GELU）做分类
