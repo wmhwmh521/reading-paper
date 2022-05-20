@@ -16,6 +16,8 @@ transformer架构的视觉分类器
 
 文中图片举例的输入是将input分割成3 * 3，即为9份，然后再将每一份都展平成一个sequence，经过一个embedding以后变为D维的向量，这个embedding文中给的解释就是一个简单的矩阵乘，之后会加入position encoding，与普通transformer类似，之后输入transformer结构中
 
+PS.从分割patch到patch的线性映射的实现方式不是真的将图片展平然后做embedding，而是使用卷积来实现的，
+
 -transformer encoder
 
 就是参考的标准的transformer结构，有些不同的是layer Norm的位置不同，标准transformer是经过多头注意力和残差相加之后做layer Norm，而这里是先做layer Norm再经过MSA（multihead self attention），只有这一个不同点，不过不太了解为什么这样改
