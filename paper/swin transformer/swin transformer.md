@@ -32,8 +32,23 @@ linear embedding是和patch partition使用同一个卷积层实现的，在一�
 PS.这里是相当于按卷积核的一小块内容来做embedding，即这一小块内容里所有通道数的像素一起生成新的embedding，得到的结果也是一个矩阵，每一个位置都是整个通道的特征一起作为embedding后的feature
 
 -patch merging
+
 patch merging的实现在论文中的描述只有几句话
 （原文内容：第一个patch merging层链接了每组2 * 2碎片的临近特征，在4-C通道维度特征使用了一个线性层）
-我按字面意思理解不太明白，于是找了篇博客看了下具体是如何实现的，大概就是
+我按字面意思理解不太明白，于是找了篇博客看了下具体是如何实现的，如下图的4 * 4矩阵，先将矩阵分为4块，每个2 * 2，然后取出每个对应位置的像素拼接到一起，再按通道concat一起，经过一个layer norm后用线性层减少通道数，这样实现了将分辨率减少一半，通道数翻倍的操作
 
 ![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/2.png)
+
+-swin transformer block
+
+swin transformer block是参考transformer的架构组装的，但是中间的attention部分没有使用VIT的结构，没有在整个图片上对所有像素做self attention，而是为了减少计算量，进行分窗口的自注意力，同时swin transformer block中的自注意力块有两种，分为W-MSA和SW-MSA，一般是交替使用
+
+PS.文章这里给出了使用W-MSA结构（分窗口自注意力）和普通的MSA结构（VIT结构部分窗口）的计算复杂度，证明了分窗口确实能减少很大的计算量，具体的解释参考博客内容
+
+-W-MSA
+
+和VIT的MSA结构相比只是分窗口做自注意力以减少计算量，举例来说8 * 8的矩阵MSA是对64个像素整体做一次自注意力，对于W-MSA则可以分成4块，每一块16个像素，做4次16个像素的自注意力
+
+-SW-MSA
+
+
