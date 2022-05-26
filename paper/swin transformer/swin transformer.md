@@ -55,6 +55,8 @@ PS.文章这里给出了使用W-MSA结构（分窗口自注意力）和普通的
 
 PS.但是滑动以后窗口从4个变成了9个，增大了计算量，为了减少计算量又提出了一个trick，即每次移动不同位置的网格然后重新拼接，计算时对不同大小的框做相应大小的mask操作，这里的mask操作是通过在softmax权重处添加大量负权重实现的
 
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/3.png)
+
 -Relative Position Bias
 
 这里还有一块内容就是在做自注意力的softmax操作之前还在缩放点积处增加了一个Relative Position Bias，关于它的实现文中也没有怎么提及，但是从实验结果来看效果确实有提升，具体的实现过程也在之前提到的那篇博客上有写到，
@@ -65,4 +67,3 @@ $$
 \operatorname{Attention}(Q, K, V)=\operatorname{SoftMax}\left(Q K^{T} / \sqrt{d}+B\right) V
 $$
 
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/3.png)
