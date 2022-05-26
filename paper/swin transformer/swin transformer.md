@@ -51,4 +51,18 @@ PS.文章这里给出了使用W-MSA结构（分窗口自注意力）和普通的
 
 -SW-MSA
 
-由于W-MSA是分窗口做自注意力的，所以每个窗口只能分享窗口内的信息，而不能在窗口之间进行信息交互，为了解决这个问题，提出了可以滑动的窗口，文中给出的滑动策略是$\left\lfloor\frac{M}{2}\right\rfloor$
+由于W-MSA是分窗口做自注意力的，所以每个窗口只能分享窗口内的信息，而不能在窗口之间进行信息交互，为了解决这个问题，提出了可以滑动的窗口，文中给出的滑动策略是每次在横纵方向移动$\left\lfloor\frac{M}{2}\right\rfloor$个位置（M是窗口大小），举例M为4 * 4的矩阵，每次移动2格，对移动后的网格内做MSA操作，即为SW-MSA
+
+PS.但是滑动以后窗口从4个变成了9个，增大了计算量，为了减少计算量又提出了一个trick，即每次移动不同位置的网格然后重新拼接，计算时对不同大小的框做相应大小的mask操作，这里的mask操作是通过在softmax权重处添加大量负权重实现的
+
+-Relative Position Bias
+
+这里还有一块内容就是在做自注意力的softmax操作之前还在缩放点积处增加了一个Relative Position Bias，关于它的实现文中也没有怎么提及，但是从实验结果来看效果确实有提升，具体的实现过程也在之前提到的那篇博客上有写到，
+
+PS.不过这里我还是有一些问题就是里面提到的relative position bias table是哪里来的呢？是根据某种规则生成的吗，还是用某种方式自学习到的
+
+$$
+\operatorname{Attention}(Q, K, V)=\operatorname{SoftMax}\left(Q K^{T} / \sqrt{d}+B\right) V
+$$
+
+![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/3.png)
