@@ -30,5 +30,5 @@ PS.此处flatten操作的转换可以使用torch.flatten函数或者tensor变量
 - [FLATTEN](https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html?highlight=flatten#torch.nn.Flatten)
 
 同样transpose操作也可以使用tensor自带的方法或者torch的函数，功能是调换矩阵的不同维度位置
-- [torch.flatten, transpose](https://pytorch.org/docs/stable/generated/torch.transpose.html#torch.transpose)
+- [torch.transpose, transpose](https://pytorch.org/docs/stable/generated/torch.transpose.html#torch.transpose)
 
