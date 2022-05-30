@@ -8,9 +8,13 @@
 -整体框架
 
 先在大脑里思考一下VIT的框架流程
+
 *首先是输入经过分割，展平，之后做flattening的操作，后续接embedding层映射特征
+
 *接着参考transformer和bert的做法，加入class token以及位置编码
+
 *正常的MSA（多头自注意力）操作
+
 *接MLP做分类任务
 
 ### 分割、展平、以及embedding层的实现
