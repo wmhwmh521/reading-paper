@@ -56,7 +56,9 @@ position encoding:  [B, num_pathces + 1, C]
 回忆多头注意力的过程，以及缩放点积的公式
 
 qkv(): -> [batch_size, num_patches + 1, 3 * total_embed_dim]
+
 reshape: -> [batch_size, num_patches + 1, 3, num_heads, embed_dim_per_head]
+
 permute: -> [3, batch_size, num_heads, num_patches + 1, embed_dim_per_head]
 
 -qkv的生成：
@@ -100,7 +102,9 @@ permute是对整个tensor做维度变换的操作，可以用多个transpos实�
 q乘k的转置（transpose）（此时的乘法使用@，作用类似于torch.matmul），乘缩放尺度，做softmax操作，接一个dropout层，一个linear层做映射，一个dropout层，多头注意力完毕
 
 @: multiply -> [batch_size, num_heads, num_patches + 1, embed_dim_per_head]
+
 transpose: -> [batch_size, num_patches + 1, num_heads, embed_dim_per_head]
+
 reshape: -> [batch_size, num_patches + 1, total_embed_dim]
 
 PS.这一块的操作一定是先transpos以后再reshape，才能保证是按头进行拼接，因为reshape操作的思路是先将整个矩阵按从后向前的维度展平成一行，然后再整形
