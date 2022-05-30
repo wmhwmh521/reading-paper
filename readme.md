@@ -26,4 +26,4 @@
 ### 看源码
 ***
 
-- 6 [VIT源码(vision transformer2021ICLR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/VIT.md)
+- 6 [VIT源码(vision transformer2021ICLR)]([https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/VIT.md](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/code/readme.md))
