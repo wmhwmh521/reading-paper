@@ -20,8 +20,12 @@ W_input * H_input * C_input * W_kernel * H_kernel * C_kernel
   * 指CNN层的卷积核的通道数（因为卷积核通道数决定了输出的channel）
 
 
-$\begin{array}{ll}\max _{d, w, r} & \operatorname{Accuracy}(\mathcal{N}(d, w, r)) \\ \text { s.t. } & \mathcal{N}(d, w, r)=\bigodot_{i=1 \ldots s} \hat{\mathcal{F}}_{i}^{d \cdot \hat{L}_{i}}\left(X_{\left\langle r \cdot \hat{H}_{i}, r \cdot \hat{W}_{i}, w \cdot \hat{C}_{i}\right\rangle}\right) \\ & \operatorname{Memory}(\mathcal{N}) \leq \text { target_memory } \\ & \operatorname{FLOPS}(\mathcal{N}) \leq \text { target_flops }\end{array}$
-
+\begin{array}{ll}
+\max _{d, w, r} & \operatorname{Accuracy}(\mathcal{N}(d, w, r)) \\
+\text { s.t. } & \mathcal{N}(d, w, r)=\bigodot_{i=1 \ldots s} \hat{\mathcal{F}}_{i}^{d \cdot \hat{L}_{i}}\left(X_{\left\langle r \cdot \hat{H}_{i}, r \cdot \hat{W}_{i}, w \cdot \hat{C}_{i}\right\rangle}\right) \\
+& \operatorname{Memory}(\mathcal{N}) \leq \text { target_memory } \\
+& \operatorname{FLOPS}(\mathcal{N}) \leq \text { target_flops }
+\end{array}
 
 
 -整体框架
