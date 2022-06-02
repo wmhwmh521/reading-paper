@@ -11,9 +11,9 @@
 对于CNN网络来说整体影响计算量的因素即为depth，resolution，channel
 
 * depth
- * 它是指网络的总体深度，具体表现在一个stage里的模块堆叠次数，如resnet50中某些stage里的CNN会重复堆叠几次
+  * 它是指网络的总体深度，具体表现在一个stage里的模块堆叠次数，如resnet50中某些stage里的CNN会重复堆叠几次
 * resolution
- * 
+  * 
 * channel
 
 -整体框架
