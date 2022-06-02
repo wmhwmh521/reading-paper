@@ -34,5 +34,5 @@ W_input * H_input * C_input * W_kernel * H_kernel * C_kernel
 * channel
   * 因为上一层的输出会作为下一层的输入，因此C_input * C_kernel也是2次方级别
 
-所以公式（3）中是$\alpha \cdot \beta^{2} \cdot \gamma^{2} \approx 2$
+所以公式（3）中是$\alpha \cdot \beta^{2} \cdot \gamma^{2} \approx 2$，在这个约束的条件下进行最优搜索，最后作者在文中给出了结论即在他的EfficientNet的baseline上这三者有一个较好的比例，为$\alpha=1.2, \beta=1.1, \gamma = 1.15$, 但是值得一提的是这个比率只适用于EfficientNet，是多次实验调优之后得来的，之后如果想扩大EfficientNet可以通过这个比率对φ进行改变进而对EfficientNet整体进行缩放
 
