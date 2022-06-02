@@ -34,5 +34,7 @@ W_input * H_input * C_input * W_kernel * H_kernel * C_kernel
 * channel
   * 因为上一层的输出会作为下一层的输入，因此C_input * C_kernel也是2次方级别
 
-所以公式（3）中是\alpha \cdot \beta^{2} \cdot \gamma^{2} \approx 2
+所以公式（3）中是$$
+\alpha \cdot \beta^{2} \cdot \gamma^{2} \approx 2
+$$
 
