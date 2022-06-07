@@ -17,7 +17,7 @@
 
 - 3 [VIT(vision transformer2021ICLR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/VIT.md)
 - 5 [swin Transformer(CVPR2021)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/swin%20transformer.md)
-- 
+- 7 [EfficientNet(2019)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/EfficientNet/EfficientNet.md)
 ### 经典
 ***
 
