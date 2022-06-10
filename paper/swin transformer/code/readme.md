@@ -73,10 +73,21 @@ pad是functional下的一个方法，用来对tensor进行指定位置填充
 >>> 
 torch.Size([3, 9, 7, 3])
 
+### W-MSA 和SW-MSA
+***
 
+W-MSA的思路
+- 首先对特征图进行分割，如果特征图不是窗口整数倍则padding
+- 按窗口做W-MSA，此处的MSA就是普通的MSA
+- 将做好W-MSA后的数据还原成分割前的样子，如果进行过padding则需去掉相应的位置
 
-
-
+W-MSA的思路
+- 如果特征图不是窗口整数倍则padding
+- 首先滑动窗口再分割，调整矩阵行列位置以满足普通的W-MSA操作，同时记录相应分割区域的mask，为后续做softmax做准备
+- 按窗口做W-MSA，此处的MSA就是普通的MSA
+- 将做好W-MSA后的数据还原成分割前的样子
+- 调整矩阵行列回原来的位置
+- 去掉相应的padding
 
 
 
