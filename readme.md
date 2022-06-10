@@ -26,5 +26,5 @@
 ### 看源码
 ***
 
-- 6 [VIT源码(vision transformer2021ICLR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/code/readme.md)
-- 8 [swin Transformer(CVPR2021)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/code/readme.md)
+- 6 [VIT源码阅读(vision transformer2021ICLR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/VIT/code/readme.md)
+- 8 [swin Transformer源码阅读(CVPR2021)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/code/readme.md)
