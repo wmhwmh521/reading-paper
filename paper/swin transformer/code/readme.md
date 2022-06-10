@@ -33,11 +33,28 @@ patch merging的实现之前已经提过，具体的实现过程在源码里是�
 
 2）对不同通道concat在一起
 
+x0 = x[:, 0::2, 0::2, :]  # [B, H/2, W/2, C]
+
+x1 = x[:, 1::2, 0::2, :]  # [B, H/2, W/2, C]
+
+x2 = x[:, 0::2, 1::2, :]  # [B, H/2, W/2, C]
+
+x3 = x[:, 1::2, 1::2, :]  # [B, H/2, W/2, C]
+
+x = torch.cat([x0, x1, x2, x3], -1)  # [B, H/2, W/2, 4*C]
+
+x = x.view(B, -1, 4 * C)  # [B, H/2*W/2, 4*C]
+
+对于前两部分具体的实现是先切片，然后cat在一起
+
+cat和concat用法和作用都相同，作用是按某个通道将两个tensor融合在一起，要求除了被融合的通道其他shape要相同
+- [TORCH.CAT](https://pytorch.org/docs/stable/generated/torch.nn.functional.pad.html?highlight=pad#torch.nn.functional.pad)
+
 3）整形以后接一个归一化层，一个线性层减少通道数
 
 PS.如果这里特征图的像素比不是2的整数倍则需要对其进行padding，以满足patch merging的策略，此时的padding是在右侧和下侧做padding，使用了F.pad这个函数
 
-pad是functional下的一个方法，用来对tensor进行填充
+pad是functional下的一个方法，用来对tensor进行指定位置填充
 - [TORCH.NN.FUNCTIONAL.PAD](https://pytorch.org/docs/stable/generated/torch.nn.functional.pad.html?highlight=pad#torch.nn.functional.pad)
 - [说明](https://zhuanlan.zhihu.com/p/358599463)
 - 举例
