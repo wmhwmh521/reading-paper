@@ -28,8 +28,25 @@
 ![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/swin%20transformer/2.png)
 
 patch merging的实现之前已经提过，具体的实现过程在源码里是这样做的：
+
 1）按位置切片
 
 2）对不同通道concat在一起
 
-3）整形以后接一个线性层
+3）整形以后接一个归一化层，一个线性层减少通道数
+
+PS.如果这里特征图的像素比不是2的整数倍则需要对其进行padding，此时的padding是在右侧和下侧做padding，使用了F.pad这个函数
+
+pad是functional下的一个方法，用来对tensor进行填充
+- [TORCH.NN.FUNCTIONAL.PAD](https://pytorch.org/docs/stable/generated/torch.nn.functional.pad.html?highlight=pad#torch.nn.functional.pad)
+- [说明](https://zhuanlan.zhihu.com/p/358599463)
+- 举例
+- 
+>>> t4d = torch.empty(3, 3, 4, 2)
+>>> 
+>>> p3d = (0, 1, 2, 1, 3, 3) # pad by (0, 1), (2, 1), and (3, 3)
+>>> 
+>>> out = F.pad(t4d, p3d, "constant", 0)
+
+
+- 
