@@ -47,9 +47,13 @@ pad是functional下的一个方法，用来对tensor进行填充
 - (3, 3)对应的是t4d的倒数第三个维度（2的维度），意思是前面填充3列，后边填充3列
 - 
 >>> t4d = torch.empty(3, 3, 4, 2)
+>>> 
 >>> p3d = (0, 1, 2, 1, 3, 3) # pad by (0, 1), (2, 1), and (3, 3)
+>>> 
 >>> out = F.pad(t4d, p3d, "constant", 0)
+>>> 
 >>> print(out.size())
+>>> 
 torch.Size([3, 9, 7, 3])
 
 
