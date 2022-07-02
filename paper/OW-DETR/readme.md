@@ -37,8 +37,7 @@
 ![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/OW-DETR/3.png)
 
 -Novelty Classification 和 Foreground Objectness
+
 这两块内容其实在文中的实现非常简单，分别都只是一个FFN，
-
 Novelty Classification用于判别是新的种类还是已经有的种类，如果是新的种类则统一都归为Novelty这一类，代表可能是目标
-
 Foreground Objectness用于判别该锚框是前景还是背景
