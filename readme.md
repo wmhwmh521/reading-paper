@@ -11,7 +11,7 @@
 
 - 1 [DETR(transformer应用于目标检测2020ECCV)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/DETR.md)
 - 2 [sparse R-CNN(sparse 动态参数 动态交互头2020CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/sparse%20R-CNN/sparse%20R-CNN.md)
-
+- 9 [OW-DETR(开放世界 目标检测 2021CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/OW-DETR/readme.md)
 ### 分类
 ***
 
