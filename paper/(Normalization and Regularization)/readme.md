@@ -11,4 +11,11 @@ https://github.com/wmhwmh521/reading-paper/blob/main/paper/(Normalization%20and%
 Normalization
 归一化/标准化
 
+batch normalization
+批量归一化 在通道维度做归一化
+
+layer normalization
+层归一化
+
 Regularization
+正则化
