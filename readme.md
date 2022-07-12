@@ -23,6 +23,7 @@
 
 - 4 [FPN(金字塔特征图)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/FPN/FPN.md)
 - 10 [grad-CAM(热力图)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/grad-CAM/readme.md)
+- 11 [归一化、标准化和正则化(Normalization and Regularization)](https://zhuanlan.zhihu.com/p/29957294)
 ### 看源码
 ***
 
