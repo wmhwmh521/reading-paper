@@ -19,3 +19,6 @@ layer normalization
 
 Regularization
 正则化
+
+L1 L2 dropout 
+正则化
