@@ -23,3 +23,5 @@ https://github.com/jacobgil/pytorch-grad-cam
 正向传播和反向传播时的钩子函数，这两个钩子函数能够用于保存相应层的数据和梯度，为计算热力图做准备
 
 ⭐ VIT和swintransformer的应用
+
+因为VIT和swin都将图像做了分割然后排成序列，需要将这些序列还原回完整的图像再做计算
