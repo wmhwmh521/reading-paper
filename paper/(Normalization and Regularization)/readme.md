@@ -8,17 +8,17 @@ https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html?highlight=nn%2
 
 https://github.com/wmhwmh521/reading-paper/blob/main/paper/(Normalization%20and%20Regularization)/10Group%20Normalization.pdf
 
-Normalization
+⭐Normalization
 归一化/标准化
 
-batch normalization
+⭐batch normalization
 批量归一化 在通道维度做归一化
 
-layer normalization
+⭐layer normalization
 层归一化
 
-Regularization
+⭐Regularization
 正则化
 
-L1 L2 dropout 
+⭐L1 L2 dropout 
 正则化
