@@ -10,3 +10,7 @@ numpy转torch.tensor，可以指定dtype和device
 ⭐ [torch.nn.functional.interpolate](https://pytorch.org/docs/stable/generated/torch.nn.functional.interpolate.html?highlight=torch%20nn%20functional%20interpolate#torch.nn.functional.interpolate)
 
 torch的插值算法，其实也就是另一种resize
+
+⭐ [torch.stack](https://pytorch.org/docs/stable/generated/torch.stack.html?highlight=torch%20stack#torch.stack)
+
+按维度叠加，需要相同形状tensor
