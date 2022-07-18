@@ -1,1 +1,1 @@
-⭐ [预处理 resize and normalization](https://pytorch.org/docs/stable/generated/torch.as_tensor.html?highlight=torch%20as_tensor#torch.as_tensor)
+⭐ [预处理 resize and normalization](https://github.com/wmhwmh521/reading-paper/blob/main/paper/faster%20RCNN/resize%20and%20normalization.md)
