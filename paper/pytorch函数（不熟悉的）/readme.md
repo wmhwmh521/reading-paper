@@ -14,3 +14,7 @@ torch的插值算法，其实也就是另一种resize
 ⭐ [torch.stack](https://pytorch.org/docs/stable/generated/torch.stack.html?highlight=torch%20stack#torch.stack)
 
 按维度叠加，需要相同形状tensor
+
+⭐ [TORCH.TENSOR.NEW_FULL](https://pytorch.org/docs/stable/generated/torch.Tensor.new_full.html?highlight=new_full#torch.Tensor.new_full)
+
+返回一个与tensor的dtype和device相同的tensor，可以指定形状和value
