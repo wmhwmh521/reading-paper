@@ -4,6 +4,8 @@
 
 默认是与min_size对齐缩放，不满足时再与max_size对齐
 
+resize同时要对target目标信息进行缩放
+
 ⭐ normalization
 
 将输入图片按照预设好的mean和std做标准化处理
