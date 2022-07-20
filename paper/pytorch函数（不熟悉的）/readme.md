@@ -22,3 +22,7 @@ torch的插值算法，其实也就是另一种resize
 ⭐ [TORCH.TENSOR.COPY_](https://pytorch.org/docs/stable/generated/torch.Tensor.copy_.html?highlight=copy_#torch.Tensor.copy_)
 
 复制tensor的内容，复制src的内容到tensor
+
+⭐ [TORCH.JIT.ANNOTATE](https://pytorch.org/docs/stable/generated/torch.jit.annotate.html?highlight=torch%20jit%20annotate#torch.jit.annotate)
+
+变量声明操作
