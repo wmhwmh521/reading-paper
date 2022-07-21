@@ -26,3 +26,8 @@ torch的插值算法，其实也就是另一种resize
 ⭐ [TORCH.JIT.ANNOTATE](https://pytorch.org/docs/stable/generated/torch.jit.annotate.html?highlight=torch%20jit%20annotate#torch.jit.annotate)
 
 变量声明操作
+
+⭐ 切片中None的含义 
+
+w_ratios.shape            torch.Size([3, 3]),
+w_ratios[:, None].shape   torch.Size([3, 1, 3]),
