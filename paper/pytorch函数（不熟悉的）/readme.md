@@ -27,6 +27,28 @@ torch的插值算法，其实也就是另一种resize
 
 变量声明操作
 
+⭐ [TORCH.MESHGRID](https://pytorch.org/docs/stable/generated/torch.meshgrid.html?highlight=torch%20meshgrid#torch.meshgrid)
+
+分别传入行坐标和列坐标，生成网格行坐标矩阵和网格列坐标矩阵
+
+例如
+>>> x = torch.tensor([1, 2, 3])
+>>> y = torch.tensor([4, 5, 6])
+>>> grid_x, grid_y = torch.meshgrid(x, y, indexing='ij')
+>>> grid_x
+tensor([[1, 1, 1],
+        [2, 2, 2],
+        [3, 3, 3]])
+>>> grid_y
+tensor([[4, 5, 6],
+        [4, 5, 6],
+        [4, 5, 6]])
+其实是分别记录了
+[[1, 4], [1, 5], [1, 6],
+[2, 4], [2, 5], [2, 6],
+[3, 4], [3, 5], [3, 6]]
+中的横纵坐标
+
 ⭐ 切片中None的含义 增加维度
 
 w_ratios.shape       ->     torch.Size([3, 3]),
