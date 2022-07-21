@@ -33,6 +33,6 @@ w_ratios.shape       ->     torch.Size([3, 3]),
 
 w_ratios[:, None].shape   ->  torch.Size([3, 1, 3]),
 
-⭐ str(tensor)
+⭐ str(torch.tensor)
 
-tensor也可以转字符串
+tensor也可以转字符串,可以用做dict的key
