@@ -32,3 +32,7 @@ torch的插值算法，其实也就是另一种resize
 w_ratios.shape       ->     torch.Size([3, 3]),
 
 w_ratios[:, None].shape   ->  torch.Size([3, 1, 3]),
+
+⭐ str(tensor)
+
+tensor也可以转字符串
