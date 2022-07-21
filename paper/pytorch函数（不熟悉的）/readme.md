@@ -27,7 +27,8 @@ torch的插值算法，其实也就是另一种resize
 
 变量声明操作
 
-⭐ 切片中None的含义 
+⭐ 切片中None的含义 增加维度
 
 w_ratios.shape            torch.Size([3, 3]),
+
 w_ratios[:, None].shape   torch.Size([3, 1, 3]),
