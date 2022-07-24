@@ -13,11 +13,11 @@ torch的插值算法，其实也就是另一种resize
 
 ⭐ [torch.stack](https://pytorch.org/docs/stable/generated/torch.stack.html?highlight=torch%20stack#torch.stack)
 
-按维度叠加，需要相同形状tensor
+生成一个新的维度，在该维度叠加，需要相同形状tensor
 
 ⭐ [TORCH.CAT](https://pytorch.org/docs/stable/generated/torch.cat.html?highlight=torch%20cat#torch.cat)
 
-叠加tensor，与stack类似
+叠加tensor，与stack类似，但不生成新的维度
 
 ⭐ [TORCH.TENSOR.NEW_FULL](https://pytorch.org/docs/stable/generated/torch.Tensor.new_full.html?highlight=new_full#torch.Tensor.new_full)
 
