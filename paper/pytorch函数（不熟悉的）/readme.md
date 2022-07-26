@@ -75,3 +75,7 @@ w_ratios[:, None].shape   ->  torch.Size([3, 1, 3]),
 ⭐ str(torch.tensor)
 
 tensor也可以转字符串,可以用做dict的key
+
+⭐ [TORCH.CLAMP](https://pytorch.org/docs/stable/generated/torch.clamp.html#torch-clamp)
+
+限定并改变输入tensor的最大最小值
