@@ -1,3 +1,6 @@
+⭐ [torch.view/reshape]
+
+view和reshape功能是一样的，先展平所有元素在按照给定shape排列，view函数只能用于内存中连续存储的tensor，permute等操作会使tensor在内存中变得不再连续，此时就不能再调用view函数，reshape则不需要依赖目标tensor是否在内存中是连续的
 
 ⭐ [torch.as_tensor](https://pytorch.org/docs/stable/generated/torch.as_tensor.html?highlight=torch%20as_tensor#torch.as_tensor)
 
