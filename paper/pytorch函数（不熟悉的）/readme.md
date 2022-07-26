@@ -79,3 +79,12 @@ tensor也可以转字符串,可以用做dict的key
 ⭐ [TORCH.CLAMP](https://pytorch.org/docs/stable/generated/torch.clamp.html#torch-clamp)
 
 限定并改变输入tensor的最大最小值
+
+⭐ [TORCH.SPLIT](https://pytorch.org/docs/stable/generated/torch.split.html#torch.split)
+
+对tensor指定维度进行按int或者list切片
+
+⭐ [TORCH.TOPK](https://pytorch.org/docs/stable/generated/torch.topk.html#torch.topk)
+
+对tensor指定维度排序，并取top k个值，且返回索引
+
