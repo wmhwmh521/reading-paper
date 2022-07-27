@@ -95,3 +95,23 @@ tensor也可以转字符串,可以用做dict的key
 ⭐ [TORCH.LOGICAL_AND](https://pytorch.org/docs/stable/generated/torch.logical_and.html?highlight=torch%20logical_and#torch.logical_and)
 
 按元素做逻辑与，返回包含 True和False的矩阵    等同于用&
+
+⭐ [TORCH.WHERE](https://pytorch.org/docs/stable/generated/torch.where.html?highlight=torch%20where#torch.where)
+
+torch.where(condition)
+
+如果只有condition一个arg，则返回condition中不为零的索引
+
+torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足condition返回x，不满足返回y
+
+⭐ [TORCH.NONZERO](https://pytorch.org/docs/stable/generated/torch.nonzero.html#torch.nonzero)
+
+返回tensor非零索引
+
+⭐ [TORCH.SQUEEZE](https://pytorch.org/docs/stable/generated/torch.squeeze.html?highlight=squeeze#torch.squeeze)
+
+去除tensor中所有size为1的dimension
+
+⭐ [TORCH.FLATTEN](https://pytorch.org/docs/stable/generated/torch.flatten.html?highlight=flatten#torch.flatten)
+
+对tensor按设置的起始和结束dim进行展平
