@@ -88,3 +88,6 @@ tensor也可以转字符串,可以用做dict的key
 
 对tensor指定维度排序，并取top k个值，且返回索引
 
+⭐ [TORCH.GE](https://pytorch.org/docs/stable/generated/torch.ge.html?highlight=torch%20ge#torch.ge)
+
+按元素计算A > B, 返回包含 True和False的矩阵
