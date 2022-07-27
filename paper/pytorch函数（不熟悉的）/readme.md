@@ -90,4 +90,8 @@ tensor也可以转字符串,可以用做dict的key
 
 ⭐ [TORCH.GE](https://pytorch.org/docs/stable/generated/torch.ge.html?highlight=torch%20ge#torch.ge)
 
-按元素计算A > B, 返回包含 True和False的矩阵
+按元素计算A > B, 返回包含 True和False的矩阵  等同于用>
+
+⭐ [TORCH.LOGICAL_AND](https://pytorch.org/docs/stable/generated/torch.logical_and.html?highlight=torch%20logical_and#torch.logical_and)
+
+按元素做逻辑与，返回包含 True和False的矩阵    等同于用&
