@@ -110,7 +110,7 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 
 ⭐ [TORCH.SQUEEZE](https://pytorch.org/docs/stable/generated/torch.squeeze.html?highlight=squeeze#torch.squeeze)
 
-去除tensor中所有size为1的dimension
+去除tensor中所有size为1的dimension，也可以去除给定位置dim的size = 1
 
 ⭐ [TORCH.FLATTEN](https://pytorch.org/docs/stable/generated/torch.flatten.html?highlight=flatten#torch.flatten)
 
