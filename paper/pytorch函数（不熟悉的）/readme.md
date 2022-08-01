@@ -115,3 +115,11 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 ⭐ [TORCH.FLATTEN](https://pytorch.org/docs/stable/generated/torch.flatten.html?highlight=flatten#torch.flatten)
 
 对tensor按设置的起始和结束dim进行展平
+
+⭐ [TORCH.SPLIT](https://pytorch.org/docs/stable/generated/torch.split.html#torch.split)
+
+在指定dim对tensor做切片，切片大小可以相同也可以不同，可以设置
+
+⭐ [TORCH.TOPK](https://pytorch.org/docs/stable/generated/torch.topk.html#torch.topk)
+
+在指定dim取top K个值最大的value，并返回相应的index
