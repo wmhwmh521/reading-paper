@@ -14,7 +14,8 @@ https://github.com/wmhwmh521/reading-paper/blob/main/paper/(Normalization%20and%
 ⭐batch normalization
 批量归一化 在通道维度做归一化
 
-⭐layer normalization
+⭐[layer normalization](https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html?highlight=nn%20layernorm#torch.nn.LayerNorm
+)
 层归一化
 
 ⭐Regularization
