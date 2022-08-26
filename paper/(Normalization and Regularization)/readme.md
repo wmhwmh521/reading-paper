@@ -12,11 +12,11 @@ https://github.com/wmhwmh521/reading-paper/blob/main/paper/(Normalization%20and%
 归一化/标准化
 
 ⭐batch normalization
-批量归一化 在通道维度做归一化
+对一个batch-size样本内的每个特征做归一化
 
 ⭐[layer normalization](https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html?highlight=nn%20layernorm#torch.nn.LayerNorm
 )
-层归一化
+是对每个样本的所有特征做归一化
 
 ⭐Regularization
 正则化
