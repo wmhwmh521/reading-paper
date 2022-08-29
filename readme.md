@@ -5,7 +5,7 @@
 
 ## 一些想法
 ***
-- [读论文中的一些想法](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/DETR.md)
+- [读论文中的一些想法](https://github.com/wmhwmh521/reading-paper/blob/main/idea/idea.md)
 
 ### 检测
 ***
