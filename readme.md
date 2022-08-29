@@ -3,8 +3,9 @@
 
 日常读论文记录，忘了的时候回来翻翻
 
-## 近期
+## 一些想法
 ***
+- [读论文中的一些想法](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DETR/DETR.md)
 
 ### 检测
 ***
