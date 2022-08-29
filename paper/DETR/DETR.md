@@ -11,6 +11,10 @@
 不同于RCNN和YOLO生成框以后用NMS去重的方式，这里使用的Set Prediction是为生成的框与真实的框做匹配，举例来说就是预测有N个框，真实图片有3个框，那么就将真实图片里的框补齐到N个，即为
 3 + （N - 3）,之后再将预测的N个框和真实的N个框（包含N-3个no object标签）做两两匹配，以解决样本和标签的问题，具体匹配规则是匈牙利算法（查了一下是一种集合匹配的方式）
 
+-Transformer decoder
+
+不同于标准transformer，在解码器部分不是采用seq2seq的方式，而是并行的输入多个object query以得到多个锚框
+
 -整体框架
 
 CNN提feature然后transformer过一遍，再做预测分类和边界框回归，CNN和transformer都是标准的框架，可以使用resnet-50和pytorch官方实现的transformer
