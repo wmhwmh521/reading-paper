@@ -1,3 +1,7 @@
+backbone
+
+对resnet50做修改，其中第5个模块使用了膨胀卷积，norm_layer使用了自己重写的FrozenBatchNorm2d而不是标准的BatchNorm2d
+
 position_encoding
 
 position_encoding的最终形状是 （b，h，w step），根据位置由三角函数得来
