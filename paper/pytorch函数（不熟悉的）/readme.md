@@ -124,6 +124,10 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 
 在指定dim取top K个值最大的value，并返回相应的index
 
+⭐ [TORCH.nn.MODULELIST](https://pytorch.org/docs/stable/generated/torch.nn.ModuleList.html?highlight=modulelist#torch.nn.ModuleList)
+
+返回一个类似python list的类型，可以像使用list一样使用它但是只包含torch里的MODULE
+
 ⭐ [TORCH.CUMSUM](https://pytorch.org/docs/stable/generated/torch.cumsum.html#torch.cumsum)
 
 返回某一维度的持续累加值，按index顺序累加，具体参考文档
