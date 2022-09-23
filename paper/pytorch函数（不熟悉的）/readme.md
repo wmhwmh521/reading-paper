@@ -127,3 +127,7 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 ⭐ [TORCH.CUMSUM](https://pytorch.org/docs/stable/generated/torch.cumsum.html#torch.cumsum)
 
 返回某一维度的持续累加值，按index顺序累加，具体参考文档
+
+⭐ [copy.deepcopy]
+
+返回完全某一变量完全的复制，不会出现指引用地址的情况
