@@ -4,6 +4,8 @@ backbone
 
 position_encoding
 
-position_encoding的最终形状是 （b，h，w step），根据位置由三角函数得来
+position_encoding的最终形状是 （b，h，w，step），根据位置由三角函数得来
 
-我目前看来其中step应该是输入transform的序列长度，step等于transforer的hidden_dim的一半
+我目前看来其中step应该是输入transform的序列长度，step等于transformer的hidden_dim的一半
+
+position_encoding与backbone抽出的feature加在一起输入transformer
