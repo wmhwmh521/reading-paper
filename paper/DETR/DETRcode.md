@@ -1,11 +1,13 @@
-backbone
+⭐backbone
 
 对resnet50做修改，其中第5个模块使用了膨胀卷积，norm_layer使用了自己重写的FrozenBatchNorm2d而不是标准的BatchNorm2d
 
-position_encoding
+⭐position_encoding
 
 position_encoding的最终形状是 （b，h，w，step），根据位置由三角函数得来
 
-我目前看来其中step应该是输入transform的序列长度，step等于transformer的hidden_dim的一半
+我目前看来其中step应该是输入transformer的序列长度，step等于transformer的hidden_dim的一半
 
-position_encoding与backbone抽出的feature加在一起输入transformer
+position_encoding与backbone抽出的feature加在一起输入transformer，也就是说position_encoding与输入到transformer的特征图形状相同
+
+⭐backbone和backbone一起返回不同层的特征图和相应特征图的位置编码
