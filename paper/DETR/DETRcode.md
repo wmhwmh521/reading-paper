@@ -30,21 +30,21 @@ encoder需要参数：参考另一篇记录不熟悉代码的md
 
 输入：
 
-tgt, 
+    tgt, 
 
-memory,
+    memory,
 
-tgt_mask: Optional[Tensor],
+    tgt_mask: Optional[Tensor],
 
-memory_mask: Optional[Tensor] = None,
+    memory_mask: Optional[Tensor] = None,
 
-tgt_key_padding_mask: Optional[Tensor] = None,
+    tgt_key_padding_mask: Optional[Tensor] = None,
 
-memory_key_padding_mask: Optional[Tensor] = None,
+    memory_key_padding_mask: Optional[Tensor] = None,
 
-pos: Optional[Tensor] = None,
+    pos: Optional[Tensor] = None,
 
-query_pos: Optional[Tensor] = None
+    query_pos: Optional[Tensor] = None
 
                 
                 
