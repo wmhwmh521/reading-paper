@@ -140,6 +140,8 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 
 pytorch官方的多头注意力模块，创建模型时主要需要embed_dim, num_heads, dropout这三个参数
 
+embed_dim指输入和输出的dim， num_heads指多头注意力头的个数，dropout指丢弃法参数
+
 正向传播forward时，需要输入qkv三者，同时可以加入attn_mask和key_padding_mask
 
 ⭐q形状为(L, N, E_q)，L为target sequence的length，N为batch size，E_q为embedding dimension，这里query的L决定了输出的长度每个query对应一个输出
