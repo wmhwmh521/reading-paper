@@ -46,7 +46,9 @@ encoder需要参数：参考另一篇记录不熟悉代码的md
 
     query_pos: Optional[Tensor] = None
 
-                
+其中tgt代表object query， memory代表从encoder 得到的output，其他的分别为两者所需的atten_mask和padding_mask以及positional encoding
+
+值得注意的是tgt使用单独的positional encoding， memory使用的positional encoding和原始的src一样
                 
 
 
