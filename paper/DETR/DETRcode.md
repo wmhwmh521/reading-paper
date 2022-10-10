@@ -28,7 +28,10 @@ encoder需要参数：参考另一篇记录不熟悉代码的md
 
 与encoder layer有所不同
 
-输入：tgt, memory,
+输入：
+                tgt, 
+                
+                memory,
 
                 tgt_mask: Optional[Tensor],
                 
