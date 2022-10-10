@@ -135,3 +135,27 @@ torch.where(x > 0, x, y)， 按元素对condition (x > 0)计算，满足conditio
 ⭐ [copy.deepcopy]
 
 返回完全某一变量完全的复制，不会出现指引用地址的情况
+
+⭐⭐ [MultiheadAttention](https://pytorch.org/docs/stable/generated/torch.nn.MultiheadAttention.html?highlight=multiheadattention#torch.nn.MultiheadAttention)
+
+pytorch官方的多头注意力模块，创建模型时主要需要embed_dim, num_heads, dropout这三个参数
+
+正向传播forward时，需要输入qkv三者，同时可以加入attn_mask和key_padding_mask
+
+⭐q形状为(L, N, E_q)，L为target sequence的length，N为batch size，E_q为embedding dimension，这里query的L决定了输出的长度每个query对应一个输出
+
+https://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-scoring-functions.html
+
+⭐k形状为(S, N, E_k)，S为source sequence的length，N为batch size，E_k为embedding dimension 
+
+⭐v形状为(S, N, E_v)，S为source sequence的length，N为batch size，E_v为embedding dimension 
+
+⭐attn_mask只用于Decoder训练时的解码过程，作用是掩盖掉当前时刻的信息，让模型只能看到除当前时刻（包括）之外的信息
+
+⭐key_padding_mask指的是在encoder和Decoder的输入中，由于每个batch的序列长短不一，被padding的内容需要用key_padding_mask来标识出来，然后在计算注意力权重的时候忽略掉这部分信息
+
+https://blog.csdn.net/weixin_41811314/article/details/106804906
+
+⭐output：attn_output 形状为(L, N, E) 其中E = embed_dim
+
+
