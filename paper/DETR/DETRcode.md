@@ -71,4 +71,4 @@ encoder需要参数：参考另一篇记录不熟悉代码的md
 
 将所有input图片都扩展到相同大小并记录相应的mask
 
-
+PS.transformer的encoder和decoder都会储存每次通过一个模块所得到的对应结果，所以整体返回的output都是一组output，而不是单独的最后一个模块的输出
