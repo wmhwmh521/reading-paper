@@ -22,6 +22,10 @@ torch的插值算法，其实也就是另一种resize
 
 叠加tensor，与stack类似，但不生成新的维度
 
+⭐ [TORCH.UNSQUEEZE](https://pytorch.org/docs/stable/generated/torch.unsqueeze.html#torch.unsqueeze)
+
+在tensor指定维度插入1个dimension
+
 ⭐ [TORCH.TENSOR.NEW_FULL](https://pytorch.org/docs/stable/generated/torch.Tensor.new_full.html?highlight=new_full#torch.Tensor.new_full)
 
 返回一个与tensor的dtype和device相同的tensor，可以指定形状和value
