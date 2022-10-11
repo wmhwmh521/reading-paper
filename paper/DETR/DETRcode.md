@@ -16,12 +16,12 @@ position_encoding与backbone抽出的feature加在一起输入transformer，也�
 
 同样分encoder和decoder
 
-__init__(self, d_model=512, nhead=8, num_encoder_layers=6,
-                 num_decoder_layers=6, dim_feedforward=2048, dropout=0.1,
-                 activation="relu", normalize_before=False,
-                 return_intermediate_dec=False):
+    __init__(self, d_model=512, nhead=8, num_encoder_layers=6,
+             num_decoder_layers=6, dim_feedforward=2048, dropout=0.1,
+             activation="relu", normalize_before=False,
+             return_intermediate_dec=False):
 
-forward(self, src, mask, query_embed, pos_embed)
+    forward(self, src, mask, query_embed, pos_embed)
 
 ⭐encoder layer
 
