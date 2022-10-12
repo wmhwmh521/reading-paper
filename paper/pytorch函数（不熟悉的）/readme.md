@@ -166,9 +166,11 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 
 ⭐ [TORCH.CDIST](https://pytorch.org/docs/stable/generated/torch.cdist.html?highlight=cdist#torch.cdist)
 
-计算两个批量tensor之间的n范数，
+计算两个批量tensor之间的n范数，需要x1和x2批量B相同同时一个维度M相同，计算式先用x1的P dimension上第一个元素与x2的R dimension上所有元素都计算一次，再用x1的P dimension上第二个元素与x2所有计算，以此类推
 
-        x1 (Tensor) – input tensor of shape B \times P \times MB×P×M.
-
-        x2 (Tensor) – input tensor of shape B \times R \times MB×R×M.
+        x1 (Tensor) – input tensor of shape B×P×M.
+        x2 (Tensor) – input tensor of shape B×R×M.
+        output (Tensor) – output tensor of shape B×P×R.
+        
+        
 
