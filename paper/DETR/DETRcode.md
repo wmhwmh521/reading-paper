@@ -95,3 +95,15 @@ PS.transformer的encoder和decoder都会储存每次通过一个模块所得到�
                 [-0.4507, -1.4616],
                 [ 0.5577, -0.4079],
                 [ 2.3216,  1.3855]])
+                
+⭐cost_class  cost_bbox  cost_giou
+
+cost_class为分类损失 cost_class = 1 - proba[target class] 其中的1为常数被省略，这里我理解的loss物理意义就是分类错误的概率，意思是本来该是分为这一类却没有分到这一类的概率
+
+cost_bbox为锚框损失，是预测锚框out_bbox和GT标签tgt_bbox之间的1-范数
+
+PS.这里我不清楚为什么使用1-范数
+
+cost_giou为giou loss， 其中box_cxcywh_to_xyxy的作用为将box从（x， y， w， h）转换成（x1， y1， x2， y2），其中x和y为center中心坐标，转换后为box左上角坐标和右下角坐标
+
+        cost_giou = -generalized_box_iou(box_cxcywh_to_xyxy(out_bbox), box_cxcywh_to_xyxy(tgt_bbox))
