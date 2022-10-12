@@ -172,5 +172,6 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
         x2 (Tensor) – input tensor of shape B×R×M.
         output (Tensor) – output tensor of shape B×P×R.
         
-        
+⭐ [TORCH.UNBIND](https://pytorch.org/docs/stable/generated/torch.unbind.html#torch.unbind)       
 
+去除tensor某个维度并返回一个切片的tuple
