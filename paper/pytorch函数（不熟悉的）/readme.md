@@ -164,4 +164,11 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 
 ⭐output：attn_output 形状为(L, N, E) 其中E = embed_dim
 
+⭐ [TORCH.CDIST](https://pytorch.org/docs/stable/generated/torch.cdist.html?highlight=cdist#torch.cdist)
+
+计算两个批量tensor之间的n范数，
+
+        x1 (Tensor) – input tensor of shape B \times P \times MB×P×M.
+
+        x2 (Tensor) – input tensor of shape B \times R \times MB×R×M.
 
