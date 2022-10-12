@@ -72,3 +72,26 @@ encoder需要参数：参考另一篇记录不熟悉代码的md
 将所有input图片都扩展到相同大小并记录相应的mask
 
 PS.transformer的encoder和decoder都会储存每次通过一个模块所得到的对应结果，所以整体返回的output都是一组output，而不是单独的最后一个模块的输出
+
+⭐matcher
+
+        cost_class = -out_prob[:, tgt_ids]
+
+        out_prob shape = [batch_size * num_queries, num_classes]
+        tgt_ids  shape = [batch_size * num_target_boxes]
+
+这里使用tensor做切片得到的结果是，第一个维度全取，第二个维度开始按照tgt_ids的内容按顺序取相应的维度内容
+
+        a
+        tensor([[ 2.1696, -0.1447, -0.5050, -0.0133],
+                [ 0.2243, -1.4616, -0.4507, -0.3227],
+                [ 0.4810, -0.4079,  0.5577,  0.9265],
+                [ 1.6416,  1.3855,  2.3216, -0.3384]])
+
+        b = torch.tensor([2, 1])
+
+        a[:, b]
+        tensor([[-0.5050, -0.1447],
+                [-0.4507, -1.4616],
+                [ 0.5577, -0.4079],
+                [ 2.3216,  1.3855]])
