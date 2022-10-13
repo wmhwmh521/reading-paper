@@ -179,3 +179,7 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 ⭐ [TORCH.CLAMP](https://pytorch.org/docs/stable/generated/torch.clamp.html?highlight=clamp#torch.clamp)       
 
 将tensor内的值限定在某个范围[min, max]之内，超出范围的值会被设置为min和max
+
+⭐ [TORCH.ALL](https://pytorch.org/docs/stable/generated/torch.all.html#torch.all)       
+
+检查tensor所有的值中是否有不为True的，如果有返回false，全为True则返回True
