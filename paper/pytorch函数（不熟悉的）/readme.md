@@ -86,7 +86,7 @@ tensor也可以转字符串,可以用做dict的key
 
 ⭐ [TORCH.SPLIT](https://pytorch.org/docs/stable/generated/torch.split.html#torch.split)
 
-对tensor指定维度进行按int或者list切片
+对tensor指定维度进行按int或者list切片，返回切片后包含所有tensor的tuple
 
 ⭐ [TORCH.TOPK](https://pytorch.org/docs/stable/generated/torch.topk.html#torch.topk)
 
