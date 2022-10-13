@@ -107,3 +107,33 @@ PS.这里我不清楚为什么使用1-范数
 cost_giou为giou loss， 其中box_cxcywh_to_xyxy的作用为将box从（x， y， w， h）转换成（x1， y1， x2， y2），其中x和y为center中心坐标，转换后为box左上角坐标和右下角坐标
 
         cost_giou = -generalized_box_iou(box_cxcywh_to_xyxy(out_bbox), box_cxcywh_to_xyxy(tgt_bbox))
+
+在求锚框和GT的IOU时，使用了广播机制
+
+        lt = torch.max(boxes1[:, None, :2], boxes2[:, :2])
+        
+        boxes1.shape : [anchors_num, 4]
+        boxes2.shape : [classes_num, 4]
+        boxes1[:, None, :2].shape : [anchors_num, 1, 2]
+        torch.max(boxes1[:, None, :2], boxes2[:, :2]).shape 
+        = [anchors_num, classes_num, 2]
+
+https://blog.csdn.net/weixin_43981194/article/details/124868957
+
+⭐Giou
+
+https://zhuanlan.zhihu.com/p/359982543
+
+计算Giou的损失，loss = 1- Giou，同理这里1被省略了
+
+        cost_giou = -generalized_box_iou(box_cxcywh_to_xyxy(out_bbox), box_cxcywh_to_xyxy(tgt_bbox))
+        
+⭐匈牙利算法
+
+求解二分图的最佳匹配方式
+
+        from scipy.optimize import linear_sum_assignment
+        linear_sum_assignment()
+        
+        output: row_indexlist, column_indexlist
+        
