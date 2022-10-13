@@ -175,3 +175,7 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 ⭐ [TORCH.UNBIND](https://pytorch.org/docs/stable/generated/torch.unbind.html#torch.unbind)       
 
 去除tensor某个维度并返回一个切片的tuple
+
+⭐ [TORCH.CLAMP](https://pytorch.org/docs/stable/generated/torch.clamp.html?highlight=clamp#torch.clamp)       
+
+将tensor内的值限定在某个范围[min, max]之内，超出范围的值会被设置为min和max
