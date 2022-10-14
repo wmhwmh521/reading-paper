@@ -183,3 +183,7 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 ⭐ [TORCH.ALL](https://pytorch.org/docs/stable/generated/torch.all.html#torch.all)       
 
 检查tensor所有的值中是否有不为True的，如果有返回false，全为True则返回True
+
+⭐ [register_buffer](https://pytorch.org/docs/stable/generated/torch.nn.Module.html?highlight=register_buffer#torch.nn.Module.register_buffer)       
+
+为module添加一个参数，但是不应该被视为是模型的一个参数。举例来说就是BN层的running_mean是根据批量里的数据得到的，不应该是模型的参数，但是也是模型状态的一部分。
