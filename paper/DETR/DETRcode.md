@@ -75,6 +75,8 @@ PS.transformer的encoder和decoder都会储存每次通过一个模块所得到�
 
 ⭐matcher
 
+match部分首先计算整体的cost矩阵，分为三部分cost_class  cost_bbox  cost_giou，得到该矩阵后使用二分图匹配算法，即匈牙利算法得出query和target的最佳匹配方式
+
         cost_class = -out_prob[:, tgt_ids]
 
         out_prob shape = [batch_size * num_queries, num_classes]
