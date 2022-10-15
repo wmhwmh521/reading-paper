@@ -1,3 +1,10 @@
+⭐⭐⭐⭐main()
+
+    1 创建随机数种子相关
+    2 创建整体模型
+
+
+
 ⭐⭐backbone
 
 对resnet50做修改，其中第5个模块使用了膨胀卷积，norm_layer使用了自己重写的FrozenBatchNorm2d而不是标准的BatchNorm2d
