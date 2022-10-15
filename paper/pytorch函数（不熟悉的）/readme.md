@@ -187,3 +187,9 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 ⭐ [register_buffer](https://pytorch.org/docs/stable/generated/torch.nn.Module.html?highlight=register_buffer#torch.nn.Module.register_buffer)       
 
 为module添加一个参数，但是不应该被视为是模型的一个参数。举例来说就是BN层的running_mean是根据批量里的数据得到的，不应该是模型的参数，但是也是模型状态的一部分。
+
+⭐ [TORCH.NUMEL](https://pytorch.org/docs/stable/generated/torch.numel.html#torch.numel)       
+
+返回tensor里所有元素数量
+
+
