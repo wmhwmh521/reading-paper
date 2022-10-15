@@ -192,4 +192,6 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 
 返回tensor里所有元素数量
 
+⭐[字符串string相关](https://www.runoob.com/python3/python3-string.html)
 
+字符串前加 f'' 则在字符串中可以在大括号{}内使用变量
