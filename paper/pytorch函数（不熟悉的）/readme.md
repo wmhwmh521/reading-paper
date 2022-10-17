@@ -195,3 +195,7 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 ⭐[字符串string相关](https://www.runoob.com/python3/python3-string.html)
 
 字符串前加 f'' 则在字符串中可以在大括号{}内使用变量
+
+⭐[torchvision.transforms.functional.normalize](https://pytorch.org/vision/stable/generated/torchvision.transforms.functional.normalize.html?highlight=normalize#torchvision.transforms.functional.normalize)
+
+torchvision里对输入做预处理transform的一种方式normalize，输入与channel通道数相同的mean和std，做output[channel] = (input[channel] - mean[channel]) / std[channel]操作
