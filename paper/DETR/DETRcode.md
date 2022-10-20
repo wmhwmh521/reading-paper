@@ -1,12 +1,15 @@
 ⭐⭐⭐⭐main()
 
-    1 创建随机数种子相关
-    2 创建整体模型
-    3 记录模型相关parameters，创建优化器AdamW
-    4 设置动态学习率相关
-    5 创建训练集train，验证集val
+        1 创建随机数种子相关
+        2 创建整体模型
+        3 记录模型相关parameters，创建优化器AdamW
+        4 设置动态学习率相关
+        5 创建训练集train，验证集val
 
 
+
+        target标签： (x, y, w, h)
+        conv2D input： (B, C, H, W)
 
 ⭐⭐backbone
 
@@ -148,4 +151,55 @@ https://zhuanlan.zhihu.com/p/359982543
         linear_sum_assignment()
         
         output: row_indexlist, column_indexlist
+
+⭐⭐数据集相关
+
+⭐数据集transform
+
+按顺序，分别做50%概率水平翻转，
+
+    if image_set == 'train':
+        return T.Compose([
+            T.RandomHorizontalFlip(),
+            T.RandomSelect(
+                T.RandomResize(scales, max_size=1333),
+                T.Compose([
+                    T.RandomResize([400, 500, 600]),
+                    T.RandomSizeCrop(384, 600),
+                    T.RandomResize(scales, max_size=1333),
+                ])
+            ),
+            normalize,
+        ])
+
+⭐T.RandomResize
+
+该resize函数会从给定的scales序列中随机挑选出一个scale用来缩放，具体做法就是将w和h较小的那一个缩放到scale的大小，同时还要保证缩放后大的一个边不会超过max_size,同时也会对tartget label进行相应的缩放
+
+⭐T.RandomSizeCrop(384, 600)
+
+        同时处理image和target的crop裁剪操作，可以设定crop后的部分长度最大值与最小值
+
+        使用torchvision.transforms.RandomCrop.get_params()方法获取在image中随机的裁剪位置，返回(top，left，h，w)，是裁剪后的image相对原图的位置
+
+        crop(image, target, region)
+        target：(x1, y1, x2, y2)
+        region: (top，left，h，w)
+
+
+        根据原图和RandomCrop.get_params()方法返回的(top，left，h，w)对target做相应的裁剪
+        具体思路：
+        1.在经过crop操作以后，image从原始的左上角为坐标中心转移到了以crop部分左上角为中心，即从(0, 0)转移到(left, top) 
+        2.此时原来的target坐标仍然以(0，0)为中心，用target坐标减去(left，top)即可将它转换为以(left，top)为中心的坐标
+        cropped_boxes = boxes - torch.as_tensor([j, i, j, i]) 
+        3.转换后的坐标会与region的[w, h]进行比较，如果大于[w, h]，则说明target的边框已经在region之外，此时需要将target限制在region之内
+        max_size = torch.as_tensor([w, h], dtype=torch.float32)
+        cropped_boxes = torch.min(cropped_boxes.reshape(-1, 2, 2), max_size)
+        4.将转换坐标后的cropped_boxes如果有小于0的坐标，说明该坐标不在region的区域内，因此只能取它在region部分内的box
+        cropped_boxes = cropped_boxes.clamp(min=0)
+        5.计算crop操作之后的area的面积
+        area = (cropped_boxes[:, 1, :] - cropped_boxes[:, 0, :]).prod(dim=1)
+
+
+
         

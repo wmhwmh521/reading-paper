@@ -201,3 +201,49 @@ https://blog.csdn.net/weixin_41811314/article/details/106804906
 torchvision里对输入做预处理transform的一种方式normalize，输入与channel通道数相同的mean和std，做normalization操作
 
         output[channel] = (input[channel] - mean[channel]) / std[channel]
+
+⭐[random.round](https://www.runoob.com/python/func-number-round.html)
+
+        round( x [, n]  )
+
+random的四舍五入操作，可以四舍五入到指定位
+
+⭐[random.randint](https://www.runoob.com/python3/ref-random-randint.html)
+
+        random.randint(start, stop)
+
+返回指定区间的随机数
+
+⭐[torchvision.transforms.RANDOMCROP](https://pytorch.org/vision/stable/generated/torchvision.transforms.RandomCrop.html?highlight=randomcrop#torchvision.transforms.RandomCrop)
+
+随即裁剪操作，实例化后等同于神经网络的一个层，其中有静态方法get_params可以调用
+
+PS. 静态方法即无需实例化类即可调用的方法
+
+⭐[torchvision.transforms.functional.crop](https://pytorch.org/vision/stable/generated/torchvision.transforms.functional.crop.html?highlight=crop#torchvision.transforms.functional.crop)
+
+        torchvision.transforms.functional.crop(img: torch.Tensor, top: int, left: int, height: int, width: int) → torch.Tensor
+
+torchvision的裁剪方法，给定输入img和裁剪的size，即裁剪左上角坐标和w，h，返回裁剪后的img
+
+⭐[TORCH.RANDINT](https://pytorch.org/docs/stable/generated/torch.randint.html?highlight=randint#torch.randint)
+
+torch自带的取随机数函数，可以指定start，stop，size
+
+PS. tensor.item()可以将一个元素的tensor转化为python scalar标量
+
+⭐[torch.utils.data.RandomSampler](https://pytorch.org/docs/stable/data.html?highlight=randomsampler#torch.utils.data.RandomSampler)
+
+随机采样dataset中的data，一般用于train dataset
+
+⭐[torch.utils.data.SequentialSampler](https://pytorch.org/docs/stable/data.html?highlight=randomsampler#torch.utils.data.RandomSampler)
+
+随机采样dataset中的data，一般用于val dataset
+
+⭐[torch.utils.data.BatchSampler](https://pytorch.org/docs/stable/data.html?highlight=batchsampler#torch.utils.data.BatchSampler)
+
+批量采样器，可以接受输入为(sampler, batch_size, drop_last)，其中drop_last为真则舍弃最后不足batch的部分
+
+⭐[torch.utils.data.DataLoader](https://pytorch.org/docs/stable/data.html?highlight=dataloader#torch.utils.data.DataLoader)
+
+结合数据集和采样器，返回一个提供可迭代的dataset
