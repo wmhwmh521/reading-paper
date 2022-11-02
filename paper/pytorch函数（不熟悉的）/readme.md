@@ -247,3 +247,41 @@ PS. tensor.item()可以将一个元素的tensor转化为python scalar标量
 ⭐[torch.utils.data.DataLoader](https://pytorch.org/docs/stable/data.html?highlight=dataloader#torch.utils.data.DataLoader)
 
 结合数据集和采样器，返回一个提供可迭代的dataset
+
+⭐[torch.load](https://pytorch.org/docs/stable/generated/torch.load.html?highlight=torch%20load#torch.load)
+
+从文件中加载使用 torch.save() 保存的对象，多为加载模型预训练好的权重
+
+⭐[torch.save](https://pytorch.org/docs/stable/generated/torch.save.html?highlight=save#torch.save)
+
+将目标保存到指定路径
+
+⭐[torch.nn.Module.load_state_dict](https://pytorch.org/docs/stable/generated/torch.nn.Module.html?highlight=load_state_dict#torch.nn.Module.load_state_dict)
+
+从指定路径文件load模型参数，一般是由torch.save保存的文件
+
+⭐[torch.hub.load_state_dict_from_url](https://pytorch.org/docs/stable/hub.html?highlight=load_state_dict_from_url#torch.hub.load_state_dict_from_url)
+
+从指定url下载参数，如果是压缩过的文件则会自动解压缩
+
+⭐[str.startswith(str, beg=0,end=len(string));](https://www.runoob.com/python/att-string-startswith.html)
+
+检查字符串某段位置是否为相应内容
+
+⭐[defaultdict](https://blog.csdn.net/jiaxinhong/article/details/108398099)
+
+        from collections import defaultdict
+
+        dict = defaultdict(factory_function)
+
+创建一个dict，当字典里的element不存在但被查找时，返回的不是keyError而是一个默认值，该默认值的类型为factory_function的类型
+
+⭐[deque](https://docs.python.org/zh-cn/3.6/library/collections.html?highlight=deque#collections.deque)
+
+        from collections import deque
+
+        queue = deque(["Eric", "John", "Michael"])
+        queue.append("Terry")           # 在右边加入元素
+        queue.popleft()                 # 弹出最左边元素
+
+创建一个list，将该list当作队列使用，实现先进先出后进后出
