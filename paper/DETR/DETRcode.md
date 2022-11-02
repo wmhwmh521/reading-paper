@@ -200,6 +200,29 @@ https://zhuanlan.zhihu.com/p/359982543
         5.计算crop操作之后的area的面积
         area = (cropped_boxes[:, 1, :] - cropped_boxes[:, 0, :]).prod(dim=1)
 
+⭐⭐⭐创建一个标准的torch数据集过程
 
+        1.确定dataset的目录
+        2.确定dataset的预处理transform方式
+        3.如果有pytorch标准库，可以从标准库里继承一个dataset类，否则可以自己写，该类的功能是逐个返回data和对应的label
+        此处使用的是继承了torchvision.datasets.CocoDetection类，在此基础上重写
+
+⭐⭐模型返回参数相关
+
+模型会返回3个参数，分别为model本身，criterion，postprocessors
+
+        return model, criterion, postprocessors
+        model                   模型本身
+        criterion               计算loss相关
+        postprocessors          将模型output转化为coco格式
+
+criterion的实例类
+
+        class SetCriterion(nn.Module):
+                """ This class computes the loss for DETR.
+                The process happens in two steps:
+                        1) we compute hungarian assignment between ground truth boxes and the outputs of the model
+                        2) we supervise each pair of matched ground-truth / prediction (supervise class and box)
+                """
 
         
