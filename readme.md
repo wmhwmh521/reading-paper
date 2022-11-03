@@ -14,7 +14,7 @@
 - 2 [sparse R-CNN(sparse 动态参数 动态交互头2020CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/sparse%20R-CNN/sparse%20R-CNN.md)
 - 9 [OW-DETR(开放世界 目标检测 2021CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/OW-DETR/readme.md)
 - 14 [DN-DETR(加速收敛 优化DETR锚框和真实框匹配规则 2022 CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DN-DETR/DN-DETR.md)
-- 18 [Dynamic DETR(动态修改参数DETR 类比sparse R-CNN 2021 ICCV)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/Dynamic DETR/Dynamic DETR.md)
+- 14 [Dynamic DETR(动态修改参数DETR 类比sparse R-CNN 2021 ICCV)](wmhwmh521/reading-paper/paper/Dynamic DETR/Dynamic DETR.md)
 ### 分类
 ***
 
