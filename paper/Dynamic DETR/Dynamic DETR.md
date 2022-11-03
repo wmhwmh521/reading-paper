@@ -32,8 +32,3 @@ PS. 这一部分如何使用动态的决定参数我没有仔细学过，以后�
 
 
 
-
-![image](https://github.com/wmhwmh521/reading-paper/blob/main/paper/Dynamic DETR/1.png)
-
-
-
