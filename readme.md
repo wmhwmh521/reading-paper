@@ -16,6 +16,7 @@
 - 14 [DN-DETR(加速收敛 优化DETR锚框和真实框匹配规则 2022 CVPR)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DN-DETR/DN-DETR.md)
 - 18 [Dynamic DETR(动态修改参数DETR 类比sparse R-CNN 2021 ICCV)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/Dynamic%20DETR/Dynamic%20DETR.md)
 - 19 [DEFORMABLE DETR(ICLR 2021 DETR后续标准工作)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DEFORMABLE%20DETR/DEFORMABLE%20DETR.md)
+- 20 [SPARSE DETR(ICLR 2022 )](https://github.com/wmhwmh521/reading-paper/blob/main/paper/SPARSE%20DETR/SPARSE%20DETR.md)
 ### 分类
 ***
 
