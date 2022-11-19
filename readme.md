@@ -18,6 +18,7 @@
 - 19 [DEFORMABLE DETR(ICLR 2021 DETR后续标准工作)](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DEFORMABLE%20DETR/DEFORMABLE%20DETR.md)
 - 20 [SPARSE DETR(ICLR 2022 )](https://github.com/wmhwmh521/reading-paper/blob/main/paper/SPARSE%20DETR/SPARSE%20DETR.md)
 - 21 [DAB-DETR(ICLR 2022 )](https://github.com/wmhwmh521/reading-paper/blob/main/paper/DAB-DETR/DAB-DETR.md)
+- 22 [SMCA DETR(ICCV 2021 )](https://github.com/wmhwmh521/reading-paper/blob/main/paper/SMCA%DETR/SMCA%DETR.md)
 ### 分类
 ***
 
