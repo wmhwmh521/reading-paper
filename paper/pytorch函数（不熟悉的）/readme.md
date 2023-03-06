@@ -26,6 +26,10 @@ torch的插值算法，其实也就是另一种resize
 
 在tensor指定维度插入1个dimension
 
+⭐ [TORCH.permute](https://pytorch.org/docs/stable/generated/torch.permute.html?highlight=permute#torch.permute)
+
+改变通道维度顺序
+
 ⭐ [TORCH.TENSOR.NEW_FULL](https://pytorch.org/docs/stable/generated/torch.Tensor.new_full.html?highlight=new_full#torch.Tensor.new_full)
 
 返回一个与tensor的dtype和device相同的tensor，可以指定形状和value
